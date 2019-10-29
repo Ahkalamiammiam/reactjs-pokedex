@@ -1,30 +1,29 @@
 import React, { Component } from 'react';
+import { BrowserRouter, Link, Route, Switch } from 'react-router-dom';
 import './App.css';
 
-// Components
-import Filtre from './components/Filtre';
+// Pages
+import Pokedex from './pages/Pokedex';
 
 class App extends Component {
-  state = {
-    value: '',
-  };
-
-  handleSubmit = (ev) => {
-    ev.preventDefault();
-    const { value } = ev.currentTarget.filter;
-    console.log(new FormData(ev.currentTarget).get('filter'));
-
-    this.setState({
-      value,
-    });
-  }
 
   render() {
     return (
-      <div className="App">
-        <h1>Hello World !</h1>
-        <Filtre value={this.state.value} handleSubmit={this.handleSubmit} />
-      </div>
+      <BrowserRouter>
+        <div className="App">
+          <nav>
+            <ul>
+              <li><Link to='/'>Home</Link></li>
+              <li><Link to='/pokedex'>Pokedex</Link></li>
+            </ul>
+          </nav>
+
+          <Switch>
+            <Route exact path='/'>Home</Route>
+            <Route path='/pokedex'><Pokedex /></Route>
+          </Switch>
+        </div>
+      </BrowserRouter>
     );
   }
 }

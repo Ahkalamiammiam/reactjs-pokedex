@@ -1,13 +1,13 @@
 import React from 'react';
 
-const Filtre = props => (
+const Filtre = ({ handleSubmit, value }) => (
     <>
-        <form onSubmit={props.handleSubmit}>
+        <form onSubmit={handleSubmit}>
             <label htmlFor="filter">Looking for a Pokemon ? </label>
             <input id="" name="filter" type="text" />
             <input type="submit" value="Submit" />
         </form>
-        <p>{props.value}</p>
+        <p>{value}</p>
     </>
 );
 
