@@ -5,6 +5,9 @@ import './App.scss';
 // Pages
 import Pokedex from './pages/Pokedex';
 
+// Component
+import Details from './components/Details';
+
 class App extends Component {
 
   render() {
@@ -34,6 +37,7 @@ class App extends Component {
                   <p>Vous trouverez toutes les informations relatives aux 151 Pokémons</p>
                 </Route>
                 <Route path='/pokedex'><Pokedex /></Route>
+                <Route exact path='/pokemon/:name'><Details /></Route>
               </Switch>
             </div>
           </div>
