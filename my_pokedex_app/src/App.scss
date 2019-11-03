@@ -1,0 +1,104 @@
+$header : #EF5350;
+$logo : #EEC125;
+$link : white;
+$background : #EFF1F0;
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+// TYPOS
+
+h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 26px;
+  margin: 0px;
+  color: $logo;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+header {  
+  height: 15vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: $header;
+
+  .navbar {
+    height: inherit;
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .logo {
+    margin-left: 6%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    h1 {
+      letter-spacing: 1.5px;
+    }
+  }
+
+  nav {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+
+    width: 38%;
+    height: inherit;
+
+    ul {
+      height: inherit;
+      padding: 0px;
+      margin: 0px;
+
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+
+      li {
+        margin-left: 10%;
+
+        a {
+          font-weight: 600;
+          color: $link;
+        }
+      }
+    }
+  }
+}
+
+.homeBloc {
+  height: 10vh;
+  width: 100%;
+  background-color: $background;
+}
+
+.homePage {
+  height: 75vh;
+  width: 100%;
+  background-color: $background;
+
+  p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 22px;
+    font-weight: 500;
+    color: #263238;
+    line-height: 50px;
+    display: flex;
+    justify-content: center;
+  }
+}

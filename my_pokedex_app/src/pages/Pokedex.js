@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import '../components/styles/Pokedex.scss';
 
 // Components
 import Filtre from '../components/Filtre';
@@ -6,19 +7,19 @@ import Filtre from '../components/Filtre';
 class Pokedex extends Component {
     state = {
         value: '',
-        api: []
+        api: [],
     };
 
     handleSubmit = async (ev) => {
-        ev.preventDefault();
         const { value } = ev.currentTarget.filter;
+        ev.preventDefault();
         console.log(new FormData(ev.currentTarget).get('filter'));
 
         try {
             
-        const response = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=151`);
+        const response = await fetch(`http://pokeapi.co/api/v2/pokemon?limit=151`);
         const data = await response.json();
-        this.setState({ api: data });
+        this.setState({ api: data, value });
         console.log(this.state.api);
 
         } catch (err) {
@@ -29,13 +30,14 @@ class Pokedex extends Component {
     }
 
     render() {
-        const { data } = this.state;
+        const { api } = this.state;
 
         return(
-            <div className="App">
-                <h1>Hello World !</h1>
-                <Filtre value={this.state.value} handleSubmit={this.handleSubmit} />
-                {<p>{data}</p>}
+            <div className="pokedexContainer">
+                <div className="Pokedex">
+                    <h2>Hello World !</h2>
+                </div>
+                    <Filtre value={this.state.value} handleSubmit={this.handleSubmit} />
             </div>
         );
     }
