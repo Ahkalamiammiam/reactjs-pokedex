@@ -1,0 +1,19 @@
+.itemContainer {
+    width: 26%;
+    height: 30vh;
+    margin-top: 30px;
+    background-color: whitesmoke;
+    border-radius: 40px;
+    -webkit-box-shadow: 0px 0px 10px 1px rgba(38,50,56,0.75);
+    -moz-box-shadow: 0px 0px 10px 1px rgba(38,50,56,0.75);
+    box-shadow: 0px 0px 10px 1px rgba(38,50,56,0.75);
+    color: #263238;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    h2 {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 22px;
+    }
+}

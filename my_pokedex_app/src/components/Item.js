@@ -1,12 +1,49 @@
-import React from 'react';
+import React, {Component} from 'react';
+import './styles/Item.scss';
+import '../components/loader/Loader';
+import Loader from '../components/loader/Loader';
 
-const Item = ({ name, sprites, weight, height }) => (
-    <li>
-        <h2>{name}</h2>
-        <img src={sprites} alt=""/>
-        <h3>{weight}</h3>
-        <h3>{height}</h3>
-    </li>
-);
+class Item extends Component {
+    state = {
+        name: '',
+        index: '',
+        sprites: '',
+        spritesLoading: true,
+        requests: false,
+    };
+
+    componentDidMount() {
+        const { name, url } = this.props;
+        const index = url.split('/')[url.split('/').length - 2];
+        const sprites = `https://github.com/PokeApi/sprites/blob/master/sprites/pokemon/${index}.png?raw=true`;
+
+        this.setState({
+            name,
+            index,
+            sprites,
+        });
+    }
+
+    render() {
+        return (
+            <div className="itemContainer">
+                <li>
+                    {this.state.spritesLoading ? (
+                        <Loader />
+                    ) : null}
+                    <img alt=""
+                         onLoad={() => this.setState({ spritesLoading: false })}
+                         onError={() => this.setState({ requests: true })}
+                         src={this.state.sprites}
+                    />
+                    <h3>{this.state.name.toLowerCase().split(" ")
+                            .map(letter => letter.charAt(0).toUpperCase() + letter.substring(1))
+                            .join(' ')}
+                    </h3>
+                </li>
+            </div>
+        );
+    }
+}
 
 export default Item;
