@@ -1,19 +1,17 @@
 import React, {Component} from 'react';
-//import axios from 'axios';
 
 class Details extends Component {
     state = {
         name: '',
-        index: '',
         sprites: '',
     };
 
     async componentDidMount() {
-        const { index } = this.props;
+        const { name } = this.props;
         try {
-            const response = await fetch(`https://pokeapi.co/api/v2/pokemon/` + index);
-            const name = await response.json();
-            console.log(index);
+            const response = await fetch(`https://pokeapi.co/api/v2/pokemon/` + name);
+            const json_response = await response.json();
+            console.log(json_response);
             this.setState({ name });
         } catch (err) {
             console.log(err);

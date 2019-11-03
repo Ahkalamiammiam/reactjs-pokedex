@@ -3,7 +3,6 @@ import { Link  } from 'react-router-dom';
 import './styles/Item.scss';
 
 // Components
-import '../components/loader/Loader';
 import Loader from '../components/loader/Loader';
 
 class Item extends Component {
