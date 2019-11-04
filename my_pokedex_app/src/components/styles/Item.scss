@@ -1,7 +1,8 @@
 .itemContainer {
-    width: 26%;
+    width: 24%;
     height: 30vh;
     margin-top: 30px;
+    margin-bottom: 10px;
     background-color: whitesmoke;
     border-radius: 40px;
     -webkit-box-shadow: 0px 0px 10px 1px rgba(38,50,56,0.75);
@@ -11,9 +12,35 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
+    
+    li {
+        list-style: none;
 
-    h2 {
-        font-family: 'Montserrat', sans-serif;
-        font-size: 22px;
+        h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 20px;
+            text-decoration: none;
+            color: #263238;
+        }
+
+        button {
+            padding: 12px;
+            width: 110px;
+            margin-top: 14px;
+            border: 1px solid #EFF1F0;
+            background-color: #EF5350;
+            color: #EFF1F0;
+            font-family: 'Montserrat', sans-serif;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            border: 1px solid #EF5350;
+            background-color: #EFF1F0;
+            color: #EF5350;
+            position: relative;
+        }
     }
 }

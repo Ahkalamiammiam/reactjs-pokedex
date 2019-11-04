@@ -1,0 +1,25 @@
+.detailsContainer {
+    width: 60%;
+    height: 65vh;
+    margin: auto;
+    padding: 10px;
+
+    background-color: whitesmoke;
+    border-radius: 40px;
+    -webkit-box-shadow: 0px 0px 10px 1px rgba(38,50,56,0.75);
+    -moz-box-shadow: 0px 0px 10px 1px rgba(38,50,56,0.75);
+    box-shadow: 0px 0px 10px 1px rgba(38,50,56,0.75);
+    color: #263238;
+    font-family: 'Montserrat', sans-serif;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    p {
+        font-size: 18px;
+        margin-bottom: -25px;
+    }
+
+}
